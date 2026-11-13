@@ -9,7 +9,7 @@ const GARMENT_ICONS: Record<string, string> = {
 
 export default function IndumentariaPage() {
   // Group by person
-  const personIds = [...new Set(GARMENTS.map(g => g.person_id))];
+  const personIds = Array.from(new Set(GARMENTS.map(g => g.person_id)));
   const totalReady = GARMENTS.filter(g => g.status === 'disponible').length;
   const totalPending = GARMENTS.filter(g => g.status !== 'disponible').length;
 

@@ -12,7 +12,7 @@ const RULE_CATEGORY_LABELS: Record<string, string> = {
 
 export default function ProtocoloPage() {
   // Group by event type
-  const eventTypes = [...new Set(PROTOCOL_RULES.map(r => r.event_type))];
+  const eventTypes = Array.from(new Set(PROTOCOL_RULES.map(r => r.event_type)));
 
   return (
     <>

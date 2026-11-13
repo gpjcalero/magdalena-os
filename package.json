@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "privacy:check": "node scripts/check-synthetic-seed.mjs",
+    "prebuild": "npm run privacy:check",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

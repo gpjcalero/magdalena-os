@@ -8,7 +8,7 @@ export default function PresupuestoPage() {
   const paid = BUDGET_ITEMS.filter(b => b.payment_status === 'pagado').reduce((s, b) => s + (b.real_amount || b.estimated_amount), 0);
 
   // Group by category
-  const categories = [...new Set(BUDGET_ITEMS.map(b => b.category))];
+  const categories = Array.from(new Set(BUDGET_ITEMS.map(b => b.category)));
   const byCategory = categories.map(cat => ({
     category: cat,
     items: BUDGET_ITEMS.filter(b => b.category === cat),
